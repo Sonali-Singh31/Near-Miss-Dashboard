@@ -10,6 +10,11 @@ The dashboard provides safety officers with actionable insights into:
 
 ---
 
+## Live Deployment
+View the live dashboard here: https://near-miss-dashboard-ten.vercel.app/
+
+---
+
 ## Tech Stack
 - **Frontend Framework:** React (Vite)
 - **Styling:** Tailwind CSS
