@@ -1,16 +1,71 @@
-# React + Vite
+# Near Miss Data Analysis Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Objective
+The goal of this project is to transform raw construction safety data into an interactive, high-performance dashboard. It visualizes approximately 7,800 records of "Near Miss" incidents—unplanned events that could have resulted in injury or damage but were avoided. 
 
-Currently, two official plugins are available:
+The dashboard provides safety officers with actionable insights into:
+- **Trend Analysis:** Identifying if incidents are increasing or decreasing over time.
+- **Severity Distribution:** Understanding the risk profile of reported events.
+- **Category Hotspots:** Pinpointing specific areas (e.g., Work at Height) that require intervention.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tech Stack
+- **Frontend Framework:** React (Vite)
+- **Styling:** Tailwind CSS
+- **Data Processing:** Lodash (Efficient handling of 7,800+ records)
+- **Visualization:** Recharts (SVG-based responsive charts)
+- **Icons:** Lucide React
+- **Deployment:** Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Dashboard Requirements (5 Key Visualizations)
+1. **Category Bar Chart:** Distribution of incidents by primary category.
+2. **Severity Pie Chart:** Breakdown of incident severity levels (Level 0–4).
+3. **Trend Line Chart:** Monthly incident frequency tracking.
+4. **Status Radar Chart:** Analysis of unsafe conditions vs. behaviors.
+5. **Volume Area Chart:** Visualizing the density of reports over the timeline.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Prerequisites
+Ensure you have the following installed on your local machine:
+- [Node.js](https://nodejs.org/) (Version 18 or higher recommended)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+---
+
+## Installation & Setup
+
+1. **Clone the Repository (or Extract ZIP):**
+   ```bash
+   git clone <your-repository-url>
+   cd near-miss-dashboard
+
+2. **Install Dependencies:**
+
+    ```Bash
+    npm install
+3. **Prepare the Dataset:** Ensure the provided data.json is located in the /public folder of the project. This allows the application to fetch the data locally.
+
+4. **Run Development Server:**
+
+    ```Bash
+    npm run dev
+
+Open your browser and navigate to http://localhost:5173.
+
+5. **Build for Production:**
+
+    ```Bash
+
+    npm run build
+
+
+## Assumptions & Data Handling
+* Data Integrity: The application handles "dirty" data by providing fallbacks for missing categories or severity levels.
+
+* Severity Mapping: Severity levels 3 and 4 are classified as "High Priority" within the KPI metrics.
+
+* Performance: Used React useMemo hooks to ensure data processing does not cause UI lag during re-renders.
